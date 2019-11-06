@@ -10,6 +10,8 @@ namespace ListProject
     {
         static void Main(string[] args)
         {
+            //CustomList<int> list1 = new CustomList<int>();
+            //Console.WriteLine();
         }
     }
 }

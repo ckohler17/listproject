@@ -10,8 +10,7 @@ namespace ListProject
     {
         private int count;
         private int capacity;
-        private T[] items;
-        
+        private T[] items;        
 
         public int Count
         {
@@ -39,10 +38,6 @@ namespace ListProject
             }
         }
 
- 
-
-
-
         public CustomList()
         {
             capacity = 4;
@@ -62,16 +57,29 @@ namespace ListProject
                     temp[i] = items[i];
                 }
                 items = temp;
-
-                //create a for loop to put values from items into temp
-                //for loop over the items count
-
-            }
-          
+            }          
             items[count] = item;
-            //items = temp;
-            //items equal to temp
             count++;
+        }
+        public void Remove(T item)
+        {
+            T[] temp = null;
+            temp = new T[capacity];
+            int value = Array.IndexOf(items, item);
+            for(int i = 0; i < count; i++)
+            {
+                
+                while(i != value)
+                {
+                    temp[i] = items[i];
+                    break;
+                }
+                
+            }
+            items = temp;
+
+
+            count--;
         }
 
     }
