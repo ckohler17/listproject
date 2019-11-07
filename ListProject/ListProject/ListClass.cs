@@ -80,6 +80,10 @@ namespace ListProject
             items = temp;
             count--;
         }
+        public void ToString(T item)
+        {
+
+        }
 
 
 
