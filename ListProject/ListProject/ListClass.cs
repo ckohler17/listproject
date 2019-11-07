@@ -34,7 +34,7 @@ namespace ListProject
             }
             set
             {
-                items[i] = value;
+                items[i] = value;                
             }
         }
 
@@ -61,26 +61,27 @@ namespace ListProject
             items[count] = item;
             count++;
         }
+
         public void Remove(T item)
         {
-            T[] temp = null;
+            T[] temp;
             temp = new T[capacity];
-            int value = Array.IndexOf(items, item);
-            for(int i = 0; i < count; i++)
+            for (int i = 0, j = 0; i < count; i++, j++)
             {
-                
-                while(i != value)
+                if (item.Equals(items[i]))
                 {
-                    temp[i] = items[i];
-                    break;
+                    j--;
                 }
-                
+                else
+                {
+                    temp[j] = items[i];
+                }               
             }
             items = temp;
-
-
             count--;
         }
+
+
 
     }
 }
