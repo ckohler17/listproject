@@ -311,6 +311,46 @@ namespace TestListProject
             //assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        public void CustomList_Plus_OverloadPlusOperator()
+        {
+            //arrange
+            CustomList<int> list1 = new CustomList<int>();
+            CustomList<int> list2 = new CustomList<int>();
+            string expected = "135216";            
+
+            //act
+            list1.Add(1);
+            list1.Add(3);
+            list1.Add(5);
+            list2.Add(2);
+            list2.Add(1);
+            list2.Add(6);
+            CustomList<int> actual = list1 + list2;
+
+            //assert
+            Assert.AreEqual(expected, actual.ToString());
+        }
+        [TestMethod]
+        public void CustomList_Subtract_OverloadSubtractOperator()
+        {
+            //arrange
+            CustomList<int> list1 = new CustomList<int>();
+            CustomList<int> list2 = new CustomList<int>();
+            string expected = "35";
+
+            //act
+            list1.Add(1);
+            list1.Add(3);
+            list1.Add(5);
+            list2.Add(2);
+            list2.Add(1);
+            list2.Add(6);
+            CustomList<int> actual = list1 - list2;
+
+            //assert
+            Assert.AreEqual(expected, actual.ToString());
+        }
 
     }
 }

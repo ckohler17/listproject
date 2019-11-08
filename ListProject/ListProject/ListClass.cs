@@ -89,5 +89,31 @@ namespace ListProject
             }
             return value;
         }
+        public static CustomList<T> operator + (CustomList<T>list1, CustomList<T>list2)
+        {
+            CustomList<T> list3 = new CustomList<T>();
+            for (int i = 0; i < list1.count; i++){
+                list3.Add(list1[i]);
+            }
+            for (int i =0; i < list2.count; i++)
+            {
+                list3.Add(list2[i]);
+            }
+            return list3;
+        }
+        public static CustomList<T> operator -(CustomList<T> list1, CustomList<T> list2)
+        {
+            CustomList<T> list3 = new CustomList<T>();
+            for (int i = 0; i < list1.count; i++)
+            {
+                list3.Add(list1[i]);
+            }
+
+            for (int i = 0; i < list2.count; i++)
+            {
+                list3.Remove(list2[i]);
+            }
+            return list3;
+        }
     }
 }
