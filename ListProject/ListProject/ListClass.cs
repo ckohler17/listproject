@@ -57,7 +57,7 @@ namespace ListProject
                     temp[i] = items[i];
                 }
                 items = temp;
-            }          
+            }
             items[count] = item;
             count++;
         }
@@ -75,17 +75,19 @@ namespace ListProject
                 else
                 {
                     temp[j] = items[i];
-                }               
+                }
             }
             items = temp;
             count--;
         }
-        public void ToString(T item)
+        public override string ToString()
         {
-
+            string value = "";
+            for (int i = 0; i < count; i++)
+            {
+                value += items[i].ToString();
+            }
+            return value;
         }
-
-
-
     }
 }
