@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
 
-namespace ListProject
+namespace ListProject 
 {
-    public class CustomList<T>
+    public class CustomList<T> :  IEnumerable
     {
         private int count;
         private int capacity;
@@ -89,6 +90,16 @@ namespace ListProject
             }
             return value;
         }
+
+        public IEnumerator GetEnumerator()
+        {
+            for( int index = 0; index < items.Length; index++)
+            {
+                yield return items[index];
+            }
+            yield return "No more items.";
+        }
+
         public static CustomList<T> operator + (CustomList<T>list1, CustomList<T>list2)
         {
             CustomList<T> list3 = new CustomList<T>();
@@ -103,15 +114,20 @@ namespace ListProject
         }
         public static CustomList<T> operator -(CustomList<T> list1, CustomList<T> list2)
         {
+            bool result = false;
             CustomList<T> list3 = new CustomList<T>();
             for (int i = 0; i < list1.count; i++)
             {
-                list3.Add(list1[i]);
-            }
-
-            for (int i = 0; i < list2.count; i++)
-            {
-                list3.Remove(list2[i]);
+                for (int j = 0; j < list2.count; j++)
+                {
+                    if (list1[i].Equals(list2[j]))
+                    {
+                        return result;
+                    } else
+                    {
+                        list3.Add(list1[i]);
+                    }
+                }            
             }
             return list3;
         }
