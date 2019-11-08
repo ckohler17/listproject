@@ -113,23 +113,24 @@ namespace ListProject
             return list3;
         }
         public static CustomList<T> operator -(CustomList<T> list1, CustomList<T> list2)
-        {
-            bool result = false;
-            CustomList<T> list3 = new CustomList<T>();
+        {            
+            CustomList<T> list3 = new CustomList<T>();            
             for (int i = 0; i < list1.count; i++)
             {
+                bool isEqual = false;
                 for (int j = 0; j < list2.count; j++)
                 {
                     if (list1[i].Equals(list2[j]))
                     {
-                        return result;
-                    } else
+                        isEqual = true;
+                    } else if( isEqual == false && j == list2.count-1)
                     {
                         list3.Add(list1[i]);
                     }
                 }            
-            }
+            }            
             return list3;
         }
+
     }
 }

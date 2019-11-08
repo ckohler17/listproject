@@ -351,6 +351,26 @@ namespace TestListProject
             //assert
             Assert.AreEqual(expected, actual.ToString());
         }
+        [TestMethod]
+        public void CustomList_Zip_ZipOverTwoLists()
+        {
+            //arrange
+            CustomList<int> list1 = new CustomList<int>();
+            CustomList<int> list2 = new CustomList<int>();
+            string expected = "123456";
+
+            //act
+            list1.Add(1);
+            list1.Add(3);
+            list1.Add(5);
+            list2.Add(2);
+            list2.Add(4);
+            list2.Add(6);
+            
+
+            //assert
+            Assert.AreEqual(expected, actual.ToString());
+        }
 
     }
 }
