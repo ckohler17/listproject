@@ -44,7 +44,6 @@ namespace ListProject
             capacity = 4;
             count = 0;
             items = new T[capacity];
-
         }
         public void Add(T item)
         {
@@ -90,7 +89,6 @@ namespace ListProject
             }
             return value;
         }
-
         public IEnumerator GetEnumerator()
         {
             for( int index = 0; index < items.Length; index++)
