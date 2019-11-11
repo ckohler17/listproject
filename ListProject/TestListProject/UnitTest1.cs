@@ -317,7 +317,7 @@ namespace TestListProject
         //    //arrange
         //    CustomList<int> list1 = new CustomList<int>();
         //    CustomList<int> list2 = new CustomList<int>();
-        //    string expected = "135216";            
+        //    string expected = "135216";
 
         //    //act
         //    list1.Add(1);
@@ -331,26 +331,26 @@ namespace TestListProject
         //    //assert
         //    Assert.AreEqual(expected, actual.ToString());
         //}
-        [TestMethod]
-        public void CustomList_Subtract_OverloadSubtractOperator()
-        {
-            //arrange
-            CustomList<int> list1 = new CustomList<int>();
-            CustomList<int> list2 = new CustomList<int>();
-            string expected = "35";
+        //[TestMethod]
+        //public void CustomList_Subtract_OverloadSubtractOperator()
+        //{
+        //    //arrange
+        //    CustomList<int> list1 = new CustomList<int>();
+        //    CustomList<int> list2 = new CustomList<int>();
+        //    string expected = "35";
 
-            //act
-            list1.Add(1);
-            list1.Add(3);
-            list1.Add(5);
-            list2.Add(2);
-            list2.Add(1);
-            list2.Add(6);
-            CustomList<int> actual = list1 - list2;
+        //    //act
+        //    list1.Add(1);
+        //    list1.Add(3);
+        //    list1.Add(5);
+        //    list2.Add(2);
+        //    list2.Add(1);
+        //    list2.Add(6);
+        //    CustomList<int> actual = list1 - list2;
 
-            //assert
-            Assert.AreEqual(expected, actual.ToString());
-        }
+        //    //assert
+        //    Assert.AreEqual(expected, actual.ToString());
+        //}
         [TestMethod]
         public void CustomList_Zip_ZipOverTwoLists()
         {
@@ -366,7 +366,8 @@ namespace TestListProject
             list2.Add(2);
             list2.Add(4);
             list2.Add(6);
-            
+            CustomList<int> actual = list1.Zip(list2);
+
 
             //assert
             Assert.AreEqual(expected, actual.ToString());

@@ -131,6 +131,27 @@ namespace ListProject
             }            
             return list3;
         }
-
+        public void Zip(T item)
+        {
+            T[] temp;
+            temp = new T[capacity];
+            if (list1.length > list2.length)
+            {
+                for (int i = 0, j = 0; i < count; i++, j++)
+                {
+                    temp.Add(list1[i]);
+                    temp.Add(list2[j]);
+                }
+            }
+            else if (list2.length > list1.length)
+            {
+                for (int i = 0, j = 0; j < count; i++, j++)
+            {                    
+                    temp.Add(list1[i]);
+                    temp.Add(list2[j]);
+                }
+            }
+            items = temp;
+        }
     }
 }
